@@ -1,0 +1,38 @@
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  namespace: media
+  name: nfs-media-pv
+  labels:
+    claimer: nfs-media
+spec:
+  capacity:
+    storage: 6T
+  volumeMode: Filesystem
+  storageClassName: nfs-client
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  nfs:
+    path: /mnt/stor0/media
+    server: 192.168.0.250
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  namespace: media
+  name: nfs-media-pvc
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName: nfs-client
+  volumeMode: Filesystem
+  selector:
+    matchLabels:
+      claimer: nfs-media
+  resources:
+    requests:
+      storage: 6T
+  volumeName: nfs-media-pv

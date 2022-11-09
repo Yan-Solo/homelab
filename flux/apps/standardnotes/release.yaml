@@ -1,0 +1,18 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: standardnotes-server
+  namespace: apps
+spec:
+  interval: 5m
+  chart:
+    spec:
+      chart: standardnotes
+      version: '0.1.1'
+      sourceRef:
+        kind: HelmRepository
+        name: yan-solo
+        namespace: flux-system
+      interval: 1m
+  values: []  

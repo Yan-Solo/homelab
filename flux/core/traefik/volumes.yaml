@@ -1,0 +1,27 @@
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: ssl-certs
+spec:
+  accessModes:
+    - ReadWriteMany
+  capacity:
+    storage: 1Gi
+  nfs:
+    path: /mnt/stor0/ssl-certs
+    server: 192.168.0.250
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: ssl-certs
+  namespace: core
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 1Gi
+  volumeName: ssl-certs

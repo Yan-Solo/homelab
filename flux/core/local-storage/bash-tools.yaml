@@ -1,0 +1,45 @@
+# https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bash-tools
+  namespace: core
+  labels:
+    app: bash-tools
+spec:
+  selector:
+    matchLabels:
+      app: bash-tools
+  replicas: 1
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: bash-tools
+    spec:
+      containers:
+      - name: bash-tools
+        image: busybox:latest
+        imagePullPolicy: IfNotPresent
+        resources:
+          requests:
+            cpu: 100m
+            memory: 100Mi
+          limits:
+            cpu: 100m
+            memory: 100Mi
+        command: ["/bin/sh", "-c", "--"]
+        args: ["while true; do sleep 30; done;"]
+        volumeMounts:
+        - name: local-storage
+          mountPath: /mnt/disk
+      volumes:
+        - name: local-storage
+          hostPath:
+            path: /var/mnt/disk
+      restartPolicy: Always

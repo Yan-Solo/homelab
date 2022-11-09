@@ -1,0 +1,53 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: home-assistant
+  namespace: apps
+spec:
+  interval: 15m
+  chart:
+    spec:
+      chart: app-template
+      version: '0.2.2'
+      interval: 15m
+      sourceRef:
+        kind: HelmRepository
+        name: bjw-s
+        namespace: flux-system
+  values:
+    image:
+      repository: ghcr.io/home-assistant/home-assistant
+      tag: 2022.9.7
+    service:
+      main:
+        ports:
+          http:
+            port: 8123
+    ingress:
+      main:
+        enabled: true
+        annotations:
+          kubernetes.io/ingress.class: traefik
+        hosts:
+          - host: home-assistant.intropin.be
+            paths:
+              - path: /
+                pathType: Prefix
+                service:
+                  name: home-assistant
+                  namespace: apps
+                  port: 8123
+    persistence:
+      config:
+        enabled: true
+        existingClaim: home-assistant-config
+    probes:
+      liveness:
+        enabled: false
+      readiness:
+        enabled: false
+      startup:
+        enabled: false
+
+    hostNetwork: true

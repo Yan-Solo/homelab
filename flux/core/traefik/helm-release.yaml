@@ -1,0 +1,80 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: traefik
+  namespace: core
+spec:
+  interval: 15m
+  chart:
+    spec:
+      chart: traefik
+      version: '19.0.3'
+      sourceRef:
+        kind: HelmRepository
+        name: traefik
+        namespace: core
+      interval: 15m
+  values:
+    additionalArguments:
+      - --certificatesresolvers.cloudflare.acme.dnschallenge.provider=cloudflare
+      - --certificatesresolvers.cloudflare.acme.email=jan.peters1995@gmail.com
+      - --certificatesresolvers.cloudflare.acme.dnschallenge.resolvers=1.1.1.1:53,8.8.8.8:53
+      - --certificatesresolvers.cloudflare.acme.storage=/data/acme.json
+
+    logs:
+      general:
+        level: ERROR
+        format: json
+
+    ports:
+      web:
+        redirectTo: websecure
+      websecure:
+        tls:
+          enabled: true
+          certResolver: cloudflare
+
+    env:
+      - name: CF_API_EMAIL
+        valueFrom:
+          secretKeyRef:
+            key: email
+            name: cloudflare-credentials
+      - name: CF_API_KEY
+        valueFrom:
+          secretKeyRef:
+            key: apiKey
+            name: cloudflare-credentials
+
+    ingressRoute:
+      dashboard:
+        enabled: true
+
+    persistence:
+      enabled: true
+      existingClaim: "ssl-certs"
+
+    initContainers:
+      - name: volume-permissions
+        image: busybox:1.31.1
+        command: ["sh", "-c", "chmod -Rv 600 /ssl-certs/*"]
+        volumeMounts:
+          - name: ssl-certs
+            mountPath: /ssl-certs
+
+    ingressClass:
+      enabled: true
+      isDefaultClass: true
+
+    securityContext:
+      capabilities:
+        drop: [ALL]
+      readOnlyRootFilesystem: true
+      runAsGroup: 65532
+      runAsNonRoot: true
+      runAsUser: 65532
+
+    podSecurityContext:
+      fsGroup: 65532
+

@@ -1,0 +1,64 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: jellyfin
+  namespace: media
+spec:
+  interval: 15m
+  chart:
+    spec:
+      chart: app-template
+      version: '0.2.2'
+      interval: 15m
+      sourceRef:
+        kind: HelmRepository
+        name: bjw-s
+        namespace: flux-system
+  values:
+    image:
+      repository: ghcr.io/onedr0p/jellyfin
+      tag: 10.8.5@sha256:fc67ca18bd2f4a92c6510219658f1db9b126058fc2dc7dd443c4881f5fd52e29
+    service:
+      main:
+        ports:
+          http:
+            port: &port 8096
+        type: LoadBalancer
+        loadBalancerIP: 192.168.0.51
+    podSecurityContext:
+      runAsUser: 1
+      runAsGroup: 1
+      fsGroup: 1
+    persistence:
+      config:
+        enabled: true
+        existingClaim: jellyfin-config
+        # type: hostPath
+        # hostPathType: DirectoryOrCreate
+        # hostPath: /var/mnt/disk/jellyfin-config
+        # mountPath: /config
+      media:
+        enabled: true
+        existingClaim: nfs-media-pvc
+        mountPath: "/mnt/media"
+      tanscode:
+        enabled: true
+        type: emptyDir
+    ingress:
+      main:
+        enabled: true
+        annotations:
+          kubernetes.io/ingress.class: traefik
+          traefik.ingress.kubernetes.io/router.entrypoints: web, websecure
+          traefik.ingress.kubernetes.io/router.tls: 'true'
+          traefik.ingress.kubernetes.io/router.tls.certresolver: cloudflare
+        hosts:
+          - host: jellyfin.intropin.be
+            paths:
+              - path: /
+                pathType: Prefix
+                service:
+                  name: jellyfin
+                  namespace: media
+                  port: *port
