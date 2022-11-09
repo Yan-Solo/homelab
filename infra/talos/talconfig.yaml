@@ -1,0 +1,38 @@
+---
+clusterName: echel
+talosVersion: 1.2.6
+kubernetesVersion: v1.25.3
+endpoint: https://192.168.0.40:6443
+domain: cluster.local
+cniConfig:
+  name: flannel
+nodes:
+  - hostname: master1
+    ipAddress: 192.168.0.40
+    installDisk: /dev/sda
+    controlPlane: true
+    nameservers:
+      - 1.1.1.1
+      - 8.8.8.8
+    networkInterfaces:
+      - interface: eth0
+        addresses:
+          - 192.168.0.40/24
+        mtu: 1500
+        routes:
+          - network: 0.0.0.0/0
+            gateway: 192.168.0.1
+    patches:
+      - |-
+        - op: add
+          path: /machine/disks
+          value:
+            - device: /dev/sdb
+              partitions:
+                - mountpoint: /var/mnt/disk
+controlPlane:
+  patches:
+    - |-
+      - op: add
+        path: /cluster/allowSchedulingOnMasters
+        value: true
