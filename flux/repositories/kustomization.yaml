@@ -8,3 +8,5 @@ resources:
   - dysnix.yaml
   - bjw-s.yaml
   - yan-solo.yaml
+  - grafana-charts.yaml
+  - prometheus-community.yaml
