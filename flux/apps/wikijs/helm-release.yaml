@@ -27,6 +27,6 @@ spec:
               - path: /
                 pathType: Prefix
 
-    postgres:
+    postgresql:
       persistence:
         existingClaim: "wikijs"
