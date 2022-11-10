@@ -10,3 +10,4 @@ resources:
   - yan-solo.yaml
   - grafana-charts.yaml
   - prometheus-community.yaml
+  - wikijs.yaml
