@@ -9,7 +9,7 @@ spec:
   chart:
     spec:
       chart: wiki
-      version: '7.0.54'
+      version: '2.2.0'
       interval: 15m
       sourceRef:
         kind: HelmRepository
