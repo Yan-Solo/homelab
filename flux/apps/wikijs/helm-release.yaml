@@ -21,6 +21,7 @@ spec:
         - host: wikijs.intropin.be
           paths:
             - path: /
+              pathType: Prefix
     postgresql:
       persistence:
         existingClaim: "wikijs"
