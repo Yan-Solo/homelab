@@ -17,16 +17,10 @@ spec:
         namespace: flux-system
   values:
     ingress:
-      main:
-        enabled: true
-        annotations:
-          kubernetes.io/ingress.class: traefik
-        hosts:
-          - host: wikijs.intropin.be
-            paths:
-              - path: /
-                pathType: Prefix
-
+      hosts:
+        - host: wikijs.intropin.be
+          paths:
+            - path: /
     postgresql:
       persistence:
         existingClaim: "wikijs"
