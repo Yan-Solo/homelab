@@ -15,4 +15,18 @@ spec:
         name: yan-solo
         namespace: flux-system
       interval: 15m
-  values: []
+  values:
+    ingress:
+      main:
+        enabled: true
+        annotations:
+          kubernetes.io/ingress.class: traefik
+        hosts:
+          - host: home-assistant.intropin.be
+            paths:
+              - path: /
+                pathType: Prefix
+                service:
+                  name: home-assistant
+                  namespace: apps
+                  port: 8123
