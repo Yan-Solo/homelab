@@ -11,3 +11,4 @@ resources:
   - grafana-charts.yaml
   - prometheus-community.yaml
   - wikijs.yaml
+  - bitnami.yaml
