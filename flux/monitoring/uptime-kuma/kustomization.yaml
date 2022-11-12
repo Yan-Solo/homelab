@@ -5,4 +5,3 @@ namespace: monitoring
 resources:
   - release.yaml
   - volumes.yaml
-  - rewrite-url.yaml
