@@ -35,7 +35,15 @@ spec:
                 pathType: Prefix
                 service:
                   name: uptime-kuma
-                  namespace: apps
+                  namespace: monitoring
+                  port: 3001
+          - host: status.intropin.be
+            paths:
+              - path: /
+                pathType: Prefix
+                service:
+                  name: uptime-kuma
+                  namespace: monitoring
                   port: 3001
     persistence:
       data:
