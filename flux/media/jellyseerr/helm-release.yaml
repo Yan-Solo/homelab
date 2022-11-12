@@ -49,7 +49,11 @@ spec:
                   name: jellyseerr
                   namespace: media
                   port: *port
-
-
-
-
+          - host: requests.intropin.be
+            paths:
+              - path: /
+                pathType: Prefix
+                service:
+                  name: jellyseerr
+                  namespace: media
+                  port: *port
