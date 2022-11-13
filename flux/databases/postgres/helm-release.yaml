@@ -21,7 +21,5 @@ spec:
       postgresPassword: "changeme"
 
     persistence:
-      data:
-        enabled: true
-        existingClaim: postgresql
-
+      enabled: true
+      existingClaim: postgresql
