@@ -16,9 +16,11 @@ spec:
         name: bitnami
         namespace: flux-system
   values:
-    auth:
-      enablePostgresUser: true
-      postgresPassword: "changeme"
+    global:
+      postgresql:
+        auth:
+          enablePostgresUser: true
+          postgresPassword: "changeme"
 
     primary:
       persistence:
