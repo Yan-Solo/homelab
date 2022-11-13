@@ -20,7 +20,7 @@ spec:
       enablePostgresUser: true
       postgresPassword: "changeme"
 
-    primary
+    primary:
       persistence:
         enabled: true
         existingClaim: postgresql
