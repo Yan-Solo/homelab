@@ -19,6 +19,11 @@ spec:
     postgresql:
       enabled: false
 
+    config: |-
+      service:
+        jwtsecret: "myVeryComplexJWTSecret"
+        enableregistration: false
+
     ingress:
       main:
         enabled: true
