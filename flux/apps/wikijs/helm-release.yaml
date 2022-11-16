@@ -23,5 +23,6 @@ spec:
             - path: /
               pathType: Prefix
     postgresql:
-      persistence:
-        existingClaim: "wikijs"
+      enabled: false
+      postgresqlHost: "postgres-postgresql.svc.databases.cluster.local"
+      postgresqlPassword: "changeme"
