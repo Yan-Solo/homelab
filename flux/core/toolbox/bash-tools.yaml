@@ -3,14 +3,14 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: bash-tools
+  name: toolbox
   namespace: core
   labels:
-    app: bash-tools
+    app: toolbox
 spec:
   selector:
     matchLabels:
-      app: bash-tools
+      app: toolbox
   replicas: 1
   strategy:
     rollingUpdate:
@@ -20,11 +20,11 @@ spec:
   template:
     metadata:
       labels:
-        app: bash-tools
+        app: toolbox
     spec:
       containers:
-      - name: bash-tools
-        image: busybox:latest
+      - name: toolbox
+        image: pull ghcr.io/yan-solo/toolbox:latest
         imagePullPolicy: IfNotPresent
         resources:
           requests:
