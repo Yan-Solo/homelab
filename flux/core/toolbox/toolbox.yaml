@@ -24,7 +24,7 @@ spec:
     spec:
       containers:
       - name: toolbox
-        image: ghcr.io/yan-solo/toolbox:latest
+        image: ghcr.io/yan-solo/toolbox:v0.1.0
         imagePullPolicy: IfNotPresent
         resources:
           requests:
