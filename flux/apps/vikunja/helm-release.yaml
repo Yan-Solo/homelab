@@ -25,7 +25,7 @@ spec:
           jwtsecret: "myVeryComplexJWTSecret"
           enableregistration: false
         database:
-          type: "psql"
+          type: "postgres"
           user: "postgres"
           password: "changeme"
           host: "postgres-postgresql.databases.svc.cluster.local"
