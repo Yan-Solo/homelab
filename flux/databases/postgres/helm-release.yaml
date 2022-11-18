@@ -20,7 +20,7 @@ spec:
       postgresql:
         auth:
           enablePostgresUser: true
-          postgresPassword: "changeme"
+          existingSecret: "postgresql-secret"
 
     primary:
       persistence:
