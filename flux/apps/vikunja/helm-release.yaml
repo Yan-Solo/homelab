@@ -24,7 +24,7 @@ spec:
         service:
           jwtsecret: "myVeryComplexJWTSecret"
           enableregistration: false
-          timezone: "UTC+01:00"
+          timezone: "Europe/Brussel"
         database:
           type: "postgres"
           user: "postgres"
