@@ -27,7 +27,7 @@ spec:
         database:
           type: "postgres"
           user: "postgres"
-          password: "changeme"
+          password: "c3d0ZmExNjEyCg=="
           host: "postgres-postgresql.databases.svc.cluster.local"
           database: "vikunja"
           port: 5432
