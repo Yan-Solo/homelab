@@ -30,6 +30,7 @@ spec:
           password: "changeme"
           host: "postgres-postgresql.databases.svc.cluster.local"
           database: "vikunja"
+          port: 5432
 
     ingress:
       main:
