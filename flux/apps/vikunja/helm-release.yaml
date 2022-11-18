@@ -19,16 +19,17 @@ spec:
     postgresql:
       enabled: false
 
-    config: |-
-      service:
-        jwtsecret: "myVeryComplexJWTSecret"
-        enableregistration: false
-      database:
-        type: "psql"
-        user: "postgres"
-        password: "changeme"
-        host: "postgres-postgresql.databases.svc.cluster.local"
-        database: "vikunja"
+    vikunja:
+      config: |-
+        service:
+          jwtsecret: "myVeryComplexJWTSecret"
+          enableregistration: false
+        database:
+          type: "psql"
+          user: "postgres"
+          password: "changeme"
+          host: "postgres-postgresql.databases.svc.cluster.local"
+          database: "vikunja"
 
     ingress:
       main:
