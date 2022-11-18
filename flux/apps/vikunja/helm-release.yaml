@@ -23,7 +23,7 @@ spec:
       config: |-
         service:
           jwtsecret: "myVeryComplexJWTSecret"
-          enableregistration: false
+          enableregistration: true
         database:
           type: "postgres"
           user: "postgres"
