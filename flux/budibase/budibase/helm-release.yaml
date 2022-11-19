@@ -23,7 +23,7 @@ spec:
         minio: false
     ingress:
       enabled: true
-      nginx: false
+      nginx: true
       className: ""
       annotations:
         kubernetes.io/ingress.class: traefik
