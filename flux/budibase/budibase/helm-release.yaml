@@ -18,14 +18,17 @@ spec:
   values:
     ingress:
       enabled: true
+      nginx: true
+      className: ""
       annotations:
         kubernetes.io/ingress.class: traefik
       hosts:
         - host: budibase.intropin.be
           paths:
-            - path: /
-              pathType: Prefix
+          - path: /
+            pathType: Prefix
+            backend:
               service:
-                name: budibase
-                namespace: budibase
-                port: 10000
+                name: proxy-service
+                port:
+                  number: 10000 
