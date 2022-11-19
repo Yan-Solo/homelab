@@ -12,3 +12,4 @@ resources:
   - prometheus-community.yaml
   - wikijs.yaml
   - bitnami.yaml
+  - budibase.yaml
