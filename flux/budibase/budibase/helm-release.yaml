@@ -8,7 +8,7 @@ spec:
   interval: 15m
   chart:
     spec:
-      chart: app-template
+      chart: budibase
       version: '0.2.11'
       interval: 15m
       sourceRef:
@@ -27,5 +27,5 @@ spec:
               pathType: Prefix
               service:
                 name: budibase
-                namespace: apps
+                namespace: budibase
                 port: 10000

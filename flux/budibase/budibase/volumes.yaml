@@ -27,7 +27,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: budibase
-  namespace: apps
+  namespace: budibase
 spec:
   accessModes:
     - ReadWriteOnce
