@@ -16,6 +16,11 @@ spec:
         name: budibase
         namespace: flux-system
   values:
+    services:
+      redis:
+        enabled: false
+      objectStor:
+        minio: false
     ingress:
       enabled: true
       nginx: false
