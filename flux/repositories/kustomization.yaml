@@ -13,3 +13,4 @@ resources:
   - wikijs.yaml
   - bitnami.yaml
   - budibase.yaml
+  - renovatebot.yaml
