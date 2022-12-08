@@ -24,6 +24,20 @@ spec:
       - secretRef:
           name: tandoor-config
 
+    persistence:
+      staticfiles:
+        enabled: true
+        existingClaim: tandoor-staticfiles
+      mediafiles:
+        enabled: true
+        existingClaim: tandoor-mediafiles
+
+    service:
+      main:
+        ports:
+          http:
+            port: 8080
+
     ingress:
       main:
         enabled: true
