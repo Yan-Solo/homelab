@@ -28,8 +28,10 @@ spec:
       staticfiles:
         enabled: true
         existingClaim: tandoor-staticfiles
+        mountPath: /opt/recipes/staticfiles
       mediafiles:
         enabled: true
+        mountPath: /opt/recipes/mediafiles
         existingClaim: tandoor-mediafiles
 
     service:
