@@ -18,7 +18,7 @@ spec:
   values:
     image:
       repository: ghcr.io/onedr0p/jellyfin
-      tag: 10.8.7@sha256:b809eb18bb01844cd011fe29a3021cb06c3f56c4bcca35c91691915fc368b590
+      tag: 10.8.8@sha256:2c08bffc7a3b58e84a9f46870f9b16c23ca3cbee3bf68cc33e66d80409eb7e78
     service:
       main:
         ports:
