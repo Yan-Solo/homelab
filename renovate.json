@@ -7,7 +7,7 @@
   "timezone": "Europe/Brussels",
   "helm-values": {
     "fileMatch": [
-      "flux\/.*release.ya?ml$"
+      "flux\/.*helm-release.ya?ml$"
     ]
   },
   "automerge": true
