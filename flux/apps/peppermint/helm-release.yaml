@@ -54,4 +54,4 @@ spec:
                 service:
                   name: peppermint
                   namespace: apps
-                  port: peppermint
+                  port: 5000
