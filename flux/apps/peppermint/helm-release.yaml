@@ -39,7 +39,7 @@ spec:
         enabled: true
         type: pvc
         existingClaim: peppermint-config
-        mountPath: /app
+        mountPath: /tmp/app
 
     ingress:
       main:
