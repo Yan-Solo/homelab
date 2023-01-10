@@ -37,8 +37,8 @@ spec:
     persistence:
       config:
         enabled: true
-        type: existingClaim
-        name: peppermint-config
+        type: pvc
+        existingClaim: peppermint-config
         mountPath: /app
 
     ingress:
