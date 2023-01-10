@@ -39,7 +39,7 @@ spec:
         enabled: true
         type: secret
         name: peppermint-config
-        mountPath: /app/.env
+        mountPath: env
 
     ingress:
       main:
