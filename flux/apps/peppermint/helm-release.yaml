@@ -34,12 +34,23 @@ spec:
       startup:
         enabled: false
 
+    envFrom:
+      - secretRef:
+          name: tandoor-config
+
     env:
       PORT: 5432
       DB_USERNAME: 'postgres'
       DB_PASSWORD: "c3d0ZmExNjEyCg=="
       DB_HOST: "postgres-postgresql.databases.svc.cluster.local"
       BASE_URL: "http://peppermint.intropin.be"
+
+    persistence:
+      config:
+        enabled: true
+        type: configMap
+        name: peppermint-config
+        mountPath: /app/.env
 
     ingress:
       main:
