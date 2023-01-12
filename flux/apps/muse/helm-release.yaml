@@ -19,6 +19,11 @@ spec:
     image:
       repository: ghcr.io/codetheweb/muse
       tag: v2.1.7
+    service:
+      main:
+        ports:
+          http:
+            port: 80
     ingress:
       main:
         enabled: false
