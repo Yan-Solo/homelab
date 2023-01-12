@@ -17,8 +17,8 @@ spec:
         namespace: flux-system
   values:
     image:
-      repository: ghcr.io/codetheweb/muse
-      tag: v2.1.7
+      repository: registry.hub.docker.com/codetheweb/muse
+      tag: 1a61d87333f2ca4f89fa7cb8bfffb71fca220092
     service:
       main:
         ports:
