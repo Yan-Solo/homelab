@@ -19,6 +19,10 @@ spec:
     image:
       repository: registry.hub.docker.com/codetheweb/muse
       tag: 1a61d87333f2ca4f89fa7cb8bfffb71fca220092
+    env:
+      DISCORD_TOKEN: MTA2MzA5OTM3MjM3MzU0MDkwNA.Gl3Xok.tRrHqmo-lQ1fboSMwjmgBkKGK_EQTi-YPQkCwA
+      SPOTIFY_CLIENT_ID: 2561614d1fdf46f983288c3f2c3f201c
+      SPOTIFY_CLIENT_SECRET: 50c8e921d7bc44d1af5213baec9b3b1f
     service:
       main:
         ports:
