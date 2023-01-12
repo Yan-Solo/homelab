@@ -20,8 +20,7 @@ spec:
       repository: registry.hub.docker.com/codetheweb/muse
       tag: 1a61d87333f2ca4f89fa7cb8bfffb71fca220092
     envFrom:
-      - name: muse
-        secretRef: muse
+      - secretRef: muse
     service:
       main:
         ports:
