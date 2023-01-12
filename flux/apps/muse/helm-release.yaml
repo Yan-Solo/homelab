@@ -18,7 +18,7 @@ spec:
   values:
     image:
       repository: registry.hub.docker.com/codetheweb/muse
-      tag: 2.1.7
+      tag: pr-857
     envFrom:
       - secretRef:
           name: muse
