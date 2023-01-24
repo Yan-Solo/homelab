@@ -24,6 +24,7 @@ spec:
     adminUser:
       create: true
       username: &admin_user admin
+      passwordHash: "$2a$12$dxSAkcUqGTj.B9G9hHpBUeoK3uktRN4R.0edSP/IEs560Z0QsZlMu"
 
     networkPolicy:
       create: false
