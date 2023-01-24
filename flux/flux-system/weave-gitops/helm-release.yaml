@@ -47,16 +47,15 @@ spec:
             - "patch"
 
     ingress:
-      main:
-        enabled: true
-        annotations:
-          kubernetes.io/ingress.class: traefik
-        hosts:
-          - host: weave.intropin.be
-            paths:
-              - path: /
-                pathType: Prefix
-                service:
-                  name: weave-gitops
-                  namespace: flux-system
-                  port: 9001
+      enabled: true
+      annotations:
+        kubernetes.io/ingress.class: traefik
+      hosts:
+        - host: weave.intropin.be
+          paths:
+            - path: /
+              pathType: Prefix
+              service:
+                name: weave-gitops
+                namespace: flux-system
+                port: 9001
