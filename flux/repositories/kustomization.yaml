@@ -8,9 +8,4 @@ resources:
   - dysnix.yaml
   - bjw-s.yaml
   - yan-solo.yaml
-  - grafana-charts.yaml
-  - prometheus-community.yaml
-  - wikijs.yaml
   - bitnami.yaml
-  - budibase.yaml
-  - renovatebot.yaml
