@@ -1,8 +1,9 @@
+---
 apiVersion: source.toolkit.fluxcd.io/v1beta2
 kind: HelmRepository
 metadata:
   name: yan-solo
   namespace: flux-system
 spec:
-  interval: 1m
+  interval: 15m
   url: https://yan-solo.github.io/helm-charts/

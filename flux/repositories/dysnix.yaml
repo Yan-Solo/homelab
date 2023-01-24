@@ -3,8 +3,6 @@ apiVersion: source.toolkit.fluxcd.io/v1beta2
 kind: HelmRepository
 metadata:
   name: dysnix
-  # This is deployed in flux-system because it might
-  # be usefull for multiple namespaces
   namespace: flux-system
 spec:
   interval: 15m

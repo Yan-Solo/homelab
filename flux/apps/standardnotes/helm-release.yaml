@@ -5,7 +5,7 @@ metadata:
   name: standardnotes-server
   namespace: apps
 spec:
-  interval: 5m
+  interval: 15m
   chart:
     spec:
       chart: standardnotes
@@ -14,5 +14,5 @@ spec:
         kind: HelmRepository
         name: yan-solo
         namespace: flux-system
-      interval: 1m
+      interval: 15m
   values: []  
