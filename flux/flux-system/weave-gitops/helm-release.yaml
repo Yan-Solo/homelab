@@ -23,7 +23,13 @@ spec:
 
     adminUser:
       create: true
-      username: admin
+      username: &admin_user admin
+
+    networkPolicy:
+      create: false
+
+    metrics:
+      enabled: true
 
     rbac:
       create: true
