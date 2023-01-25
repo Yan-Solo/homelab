@@ -47,7 +47,7 @@ spec:
     persistence:
       config:
         enabled: true
-        existingClaim: n8n-config
+        existingClaim: n8n
         mountPath: /home/node/.n8n
     probes:
       liveness:
