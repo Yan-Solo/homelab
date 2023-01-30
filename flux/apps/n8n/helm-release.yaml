@@ -18,7 +18,7 @@ spec:
   values:
     image:
       repository: n8nio/n8n
-      tag: 0.212.1
+      tag: 0.213.0
     env:
       DB_TYPE: postgresdb
       DB_POSTGRESDB_DATABASE: n8n
