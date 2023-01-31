@@ -10,3 +10,4 @@ resources:
   - yan-solo.yaml
   - bitnami.yaml
   - weave-gitops.yaml
+  - open-8gears.yaml
