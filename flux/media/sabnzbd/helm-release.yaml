@@ -56,9 +56,3 @@ spec:
                   name: sabnzbd
                   namespace: media
                   port: *port
-
-    resources:
-      requests:
-        memory: 4Gi
-
-

@@ -50,10 +50,3 @@ spec:
         enabled: true
         existingClaim: uptime-kuma-config
         mountPath: /app/data/
-    probes:
-      liveness:
-        enabled: false
-      readiness:
-        enabled: false
-      startup:
-        enabled: false

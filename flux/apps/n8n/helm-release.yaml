@@ -40,4 +40,9 @@ spec:
                 service:
                   name: n8n
                   namespace: apps
-                  port: 8123
+                  port: 5678
+    persistence:
+      config:
+        enabled: true
+        existingClaim: n8n
+        mountPath: /home/node/.n8n

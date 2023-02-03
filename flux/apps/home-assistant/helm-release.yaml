@@ -42,12 +42,4 @@ spec:
       config:
         enabled: true
         existingClaim: home-assistant-config
-    probes:
-      liveness:
-        enabled: false
-      readiness:
-        enabled: false
-      startup:
-        enabled: false
-
     hostNetwork: true
