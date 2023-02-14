@@ -11,3 +11,4 @@ resources:
   - bitnami.yaml
   - weave-gitops.yaml
   - open-8gears.yaml
+  - truecharts.yaml
