@@ -37,3 +37,41 @@ spec:
       storage: 5G
 
 
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: satisfactory-cache
+spec:
+  capacity:
+    storage: 10G
+  volumeMode: Filesystem
+  accessModes:
+  - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Delete
+  storageClassName: local-storage
+  local:
+    path: /var/mnt/disk/satisfactory-cache
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: kubernetes.io/hostname
+          operator: In
+          values:
+          - master1
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: satisfactory-cache
+  namespace: apps
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: local-storage
+  resources:
+    requests:
+      storage: 10G
+
