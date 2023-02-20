@@ -29,7 +29,6 @@ spec:
       DATA_FOLDER: "config"
       AUTOSAVENUM: 25
       AUTOPAUSE: true
-      DEBUG: true
     service:
       main:
         type: LoadBalancer
