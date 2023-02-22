@@ -4,6 +4,4 @@ kind: Kustomization
 resources:
   - kube-prometheus
   - loki
-  - custom_exporters
-  - custom_dashboards
   - uptime-kuma
