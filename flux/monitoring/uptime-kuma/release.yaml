@@ -17,7 +17,7 @@ spec:
   values:
     image:
       repository: registry.hub.docker.com/louislam/uptime-kuma
-      tag: 1.20.0
+      tag: 1.18.5
     service:
       main:
         ports:
@@ -35,18 +35,17 @@ spec:
                 pathType: Prefix
                 service:
                   name: uptime-kuma
-                  namespace: monitoring
-                  port: 3001
-          - host: status.intropin.be
-            paths:
-              - path: /
-                pathType: Prefix
-                service:
-                  name: uptime-kuma
-                  namespace: monitoring
+                  namespace: apps
                   port: 3001
     persistence:
       data:
         enabled: true
-        existingClaim: uptime-kuma-config
+        existingClaim: uptime-kuma
         mountPath: /app/data/
+    probes:
+      liveness:
+        enabled: false
+      readiness:
+        enabled: false
+      startup:
+        enabled: false

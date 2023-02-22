@@ -1,0 +1,63 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: csexp-smurf
+  namespace: monitoring
+  labels:
+    app: csexp-smurf
+spec:
+  containers:
+  - name: csexp-smurf
+    image: kinduff/csgo_exporter:1.4.2
+    ports:
+      - containerPort: 7356
+        name: csexp-smurf-svc
+    env:
+    - name: FETCH_INVENTORY
+      value: "true"
+    - name: STEAM_ID
+      value: "76561199347165016"
+    - name: HTTP_PORT
+      value: "7356"
+    - name: STEAM_API_KEY
+      valueFrom:
+        secretKeyRef:
+          name: steam-key-main
+          namespace: monitoring
+          key: apiKey
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: csexp-smurf
+  annotations:
+    alpha.monitoring.coreos.com/non-namespaced: "true"
+  name: csexp-smurf
+  namespace: monitoring
+spec:
+  ports:
+  - name: csexp-smurf-svc
+    port: 7356
+    targetPort: csexp-smurf-svc
+    protocol: TCP
+  selector:
+    app: csexp-smurf
+
+---
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: csexp-smurf
+  namespace: monitoring
+  labels:
+    app: csexp-smurf
+spec:
+  selector:
+    matchLabels:
+      app: csexp-smurf
+  endpoints:
+    - port: csexp-smurf-svc
+      interval: 1m

@@ -1,0 +1,37 @@
+apiVersion: v1
+metadata:
+    name: steam-key-main
+    namespace: monitoring
+stringData:
+    apiKey: ENC[AES256_GCM,data:H9EgZQYWug2oQPVTn9aA6VB8P++aDeUa0PzI7VUwN8A=,iv:7EeZhgEDkNGYEFOjYge+MZd+f5FqqsA6Fe1NcES+5kE=,tag:xmMSkBRimDn2bqG957/lFQ==,type:str]
+kind: Secret
+type: Opaque
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age: []
+    lastmodified: "2022-08-08T12:33:59Z"
+    mac: ENC[AES256_GCM,data:lQKgHf3yL2JCyVOovkqkg+mHygJEmzJrm0+VVG5BOsn++vRZeGKG3vDV7EmK6c1+PlMWMy9F376x/20Q46kxdHdkb6shEdwqTom0nrqpt5z0kozB+GUyiyOw82SG/45IP2fm0i39wLpN0HEfUFCGikYU/j0dTFY1bJvBMCOamDU=,iv:ia1atdJBcw9/mB6T1ZJqQ0PGTA+ALf08hKX3AZdFMsQ=,tag:9zfaaVPvReC4akGvTvpLow==,type:str]
+    pgp:
+        - created_at: "2022-08-08T12:33:59Z"
+          enc: |
+            -----BEGIN PGP MESSAGE-----
+
+            hQGMAyl2im7hLn1lAQv/bmRlyyzriOHoHOey9ZMw3npC2rYEs9KK0MXw7a1+AVjY
+            Lo+S9dHFf5dzUBGJFUZQ1vwCxOgkDOrlBQnTGUwJ0WkqGR20CNkal3THiUrLPiE6
+            Bhu+V9ZXWvrquq4li7Y5jUr+ef+z9hLQAdN1WZUNXdtSYdvqBg4DSuStSU1xqeNA
+            SgRlnab9O18H6+qBaX8jLfcmjOdisNdSZqWHKdVbZODzgZIcxTNWFI/NsvmPiQZq
+            Q3WFOiU2AkPfq2Kf2xErE/KFRoBz6iEK+Y8W3Zlk+DlATf/zgTh36TeqPDB/LJFI
+            qb8XM1+lHiUP2/H5SsjBDMyir0VZPup5s/2+PlS7/efNHKjohbjWnYeREK0RMCij
+            t5ZSXQE850E/fO5ctfpY9Q2r5JjdWbZTFWwCeegWkH8hKhLmNB9v1Hseief/a9cc
+            CsgRQCc9tKNj6RePeuk4lmweGBFRkCvb8aXGT2rQNRXxGU38TSQeYq3geOEMCQzu
+            /FfEfRKl7UBBTIr5WIPk0lwBCF/o9OQLjLEsL04U9xmk9G8ynysIEP6V78WBBt4Z
+            IqCcXc+FGBJMEWfBFOXdFuzXLgapacqqmvKZOW05wCGJyh/FR4gt9MKk2bIc4ebh
+            wqhNwGY8jZpBBBZ7Rg==
+            =SqaH
+            -----END PGP MESSAGE-----
+          fp: B883AB231A783292042E5A10E8207031278610EF
+    encrypted_regex: ^(data|stringData)$
+    version: 3.7.3
