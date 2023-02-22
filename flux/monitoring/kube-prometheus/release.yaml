@@ -18,11 +18,37 @@ spec:
     fullnameOverride: prometheus
 
     defaultRules:
-      create: false
+      create: true
+      rules:
+        alertmanager: true
+        etcd: true
+        configReloaders: true
+        general: true
+        k8s: true
+        kubeApiserverAvailability: true
+        kubeApiserverBurnrate: true
+        kubeApiserverHistogram: true
+        kubeApiserverSlos: true
+        kubelet: true
+        kubeProxy: true
+        kubePrometheusGeneral: true
+        kubePrometheusNodeRecording: true
+        kubernetesApps: true
+        kubernetesResources: true
+        kubernetesStorage: true
+        kubernetesSystem: true
+        kubeScheduler: true
+        kubeStateMetrics: true
+        network: true
+        node: true
+        nodeExporterAlerting: true
+        nodeExporterRecording: true
+        prometheus: true
+        prometheusOperator: true
 
     alertmanager:
       fullnameOverride: alertmanager
-      enabled: false
+      enabled: true
       ingress:
         enabled: false
 
@@ -41,10 +67,10 @@ spec:
         passwordKey: admin-password
 
     kubeApiServer:
-      enabled: false
+      enabled: true
 
     kubelet:
-      enabled: false
+      enabled: true
       serviceMonitor:
         metricRelabelings:
           - action: replace
@@ -53,18 +79,18 @@ spec:
             targetLabel: instance
 
     kubeControllerManager:
-      enabled: false
+      enabled: true
       endpoints: # ips of servers 
         - 192.168.0.40
 
     coreDns:
-      enabled: false
+      enabled: true
 
     kubeDns:
       enabled: false
 
     kubeEtcd:
-      enabled: false
+      enabled: true
       endpoints: # ips of servers
         - 192.168.0.40
       service:
@@ -73,22 +99,22 @@ spec:
         targetPort: 2381
 
     kubeScheduler:
-      enabled: false
+      enabled: true
       endpoints: # ips of servers
         - 192.168.0.40
 
     kubeProxy:
-      enabled: false
+      enabled: true
       endpoints: # ips of servers
         - 192.168.0.40
 
     kubeStateMetrics:
-      enabled: false
+      enabled: true
 
     kube-state-metrics:
       fullnameOverride: kube-state-metrics
       selfMonitor:
-        enabled: false
+        enabled: true
       prometheus:
         monitor:
           enabled: true
