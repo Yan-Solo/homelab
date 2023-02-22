@@ -1,9 +1,8 @@
----
 apiVersion: source.toolkit.fluxcd.io/v1beta2
 kind: HelmRepository
 metadata:
-  name: open-8gears
+  name: grafana-charts
   namespace: flux-system
 spec:
-  interval: 15m
-  url: https://8gears.container-registry.com/chartrepo/library/
+  interval: 120m0s
+  url: https://grafana.github.io/helm-charts

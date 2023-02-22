@@ -9,6 +9,6 @@ resources:
   - bjw-s.yaml
   - yan-solo.yaml
   - bitnami.yaml
-  - weave-gitops.yaml
-  - open-8gears.yaml
   - truecharts.yaml
+  - grafana-charts.yaml
+  - prometheus-community.yaml
