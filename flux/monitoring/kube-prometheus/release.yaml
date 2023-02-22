@@ -18,37 +18,11 @@ spec:
     fullnameOverride: prometheus
 
     defaultRules:
-      create: true
-      rules:
-        alertmanager: true
-        etcd: true
-        configReloaders: true
-        general: true
-        k8s: true
-        kubeApiserverAvailability: true
-        kubeApiserverBurnrate: true
-        kubeApiserverHistogram: true
-        kubeApiserverSlos: true
-        kubelet: true
-        kubeProxy: true
-        kubePrometheusGeneral: true
-        kubePrometheusNodeRecording: true
-        kubernetesApps: true
-        kubernetesResources: true
-        kubernetesStorage: true
-        kubernetesSystem: true
-        kubeScheduler: true
-        kubeStateMetrics: true
-        network: true
-        node: true
-        nodeExporterAlerting: true
-        nodeExporterRecording: true
-        prometheus: true
-        prometheusOperator: true
+      create: false
 
     alertmanager:
       fullnameOverride: alertmanager
-      enabled: true
+      enabled: false
       ingress:
         enabled: false
 
@@ -67,10 +41,10 @@ spec:
         passwordKey: admin-password
 
     kubeApiServer:
-      enabled: true
+      enabled: false
 
     kubelet:
-      enabled: true
+      enabled: false
       serviceMonitor:
         metricRelabelings:
           - action: replace
@@ -79,50 +53,42 @@ spec:
             targetLabel: instance
 
     kubeControllerManager:
-      enabled: true
+      enabled: false
       endpoints: # ips of servers 
-        - 192.168.0.80
-        - 192.168.0.81
-        - 192.168.0.82
+        - 192.168.0.40
 
     coreDns:
-      enabled: true
+      enabled: false
 
     kubeDns:
       enabled: false
 
     kubeEtcd:
-      enabled: true
+      enabled: false
       endpoints: # ips of servers
-        - 192.168.0.80
-        - 192.168.0.81
-        - 192.168.0.82
+        - 192.168.0.40
       service:
         enabled: true
         port: 2381
         targetPort: 2381
 
     kubeScheduler:
-      enabled: true
+      enabled: false
       endpoints: # ips of servers
-        - 192.168.0.80
-        - 192.168.0.81
-        - 192.168.0.82
+        - 192.168.0.40
 
     kubeProxy:
-      enabled: true
+      enabled: false
       endpoints: # ips of servers
-        - 192.168.0.80
-        - 192.168.0.81
-        - 192.168.0.82
+        - 192.168.0.40
 
     kubeStateMetrics:
-      enabled: true
+      enabled: false
 
     kube-state-metrics:
       fullnameOverride: kube-state-metrics
       selfMonitor:
-        enabled: true
+        enabled: false
       prometheus:
         monitor:
           enabled: true
