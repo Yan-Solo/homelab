@@ -6,7 +6,7 @@ metadata:
   name: monitoring-grafana
   namespace: flux-system
 spec:
-  path: ./cluster/apps/monitoring/grafana/base
+  path: ./flux/monitoring/grafana/base
   sourceRef:
     kind: GitRepository
     name: flux-system
@@ -22,7 +22,7 @@ metadata:
   name: monitoring-grafana-dashboards
   namespace: flux-system
 spec:
-  path: ./cluster/apps/monitoring/grafana/dashboards
+  path: ./flux/monitoring/grafana/dashboards
   sourceRef:
     kind: GitRepository
     name: flux-system
