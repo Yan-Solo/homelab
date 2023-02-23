@@ -24,7 +24,7 @@ spec:
   values:
     image:
       repository: wolveix/satisfactory-server
-      tag: v1.4.5
+      tag: v1.4.6
     env:
       DATA_FOLDER: "config"
       AUTOSAVENUM: 25
