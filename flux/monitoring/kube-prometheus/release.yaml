@@ -20,8 +20,8 @@ spec:
     defaultRules:
       create: true
       rules:
-        alertmanager: false
-        etcd: false
+        alertmanager: true
+        etcd: true
         configReloaders: true
         general: true
         k8s: true
@@ -29,7 +29,7 @@ spec:
         kubeApiserverBurnrate: true
         kubeApiserverHistogram: true
         kubeApiserverSlos: true
-        kubelet: false
+        kubelet: true
         kubeProxy: true
         kubePrometheusGeneral: true
         kubePrometheusNodeRecording: true
