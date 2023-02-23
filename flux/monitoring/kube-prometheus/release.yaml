@@ -15,49 +15,21 @@ spec:
         namespace: flux-system
       interval: 1m
   values:
-    fullnameOverride: prometheus
-
     defaultRules:
       create: true
       rules:
-        alertmanager: true
-        etcd: true
-        configReloaders: true
-        general: true
-        k8s: true
-        kubeApiserverAvailability: true
-        kubeApiserverBurnrate: true
-        kubeApiserverHistogram: true
-        kubeApiserverSlos: true
-        kubelet: true
-        kubeProxy: true
-        kubePrometheusGeneral: true
-        kubePrometheusNodeRecording: true
-        kubernetesApps: true
-        kubernetesResources: true
-        kubernetesStorage: true
-        kubernetesSystem: true
-        kubeScheduler: true
-        kubeStateMetrics: true
-        network: true
-        node: true
-        nodeExporterAlerting: true
-        nodeExporterRecording: true
-        prometheus: true
-        prometheusOperator: true
+        alertmanager: false
+        etcd: false
+        configReloaders: false
+        kubelet: false
+        network: false
+        nodeExporterAlerting: false
 
     alertmanager:
-      fullnameOverride: alertmanager
-      enabled: true
-      ingress:
-        enabled: false
+      enabled: false
 
     grafana:
       enabled: true
-      fullnameOverride: grafana
-      forceDeployDatasources: false
-      forceDeployDashboards: false
-      defaultDashboardsEnabled: true
       defaultDashboardsTimezone: Europe/Brussels
       serviceMonitor:
         enabled: true
@@ -70,18 +42,10 @@ spec:
       enabled: true
 
     kubelet:
-      enabled: true
-      serviceMonitor:
-        metricRelabelings:
-          - action: replace
-            sourceLabels:
-              - node
-            targetLabel: instance
+      enabled: false
 
     kubeControllerManager:
-      enabled: true
-      endpoints: # ips of servers 
-        - 192.168.0.40
+      enabled: false
 
     coreDns:
       enabled: true
@@ -90,26 +54,16 @@ spec:
       enabled: false
 
     kubeEtcd:
-      enabled: true
-      endpoints: # ips of servers
-        - 192.168.0.40
-      service:
-        enabled: true
-        port: 2381
-        targetPort: 2381
+      enabled: false
 
     kubeScheduler:
-      enabled: true
-      endpoints: # ips of servers
-        - 192.168.0.40
+      enabled: false
 
     kubeProxy:
-      enabled: true
-      endpoints: # ips of servers
-        - 192.168.0.40
+      enabled: false
 
     kubeStateMetrics:
-      enabled: true
+      enabled: false
 
     kube-state-metrics:
       fullnameOverride: kube-state-metrics
@@ -128,14 +82,6 @@ spec:
 
     nodeExporter:
       enabled: true
-      serviceMonitor:
-        relabelings:
-          - action: replace
-            regex: (.*)
-            replacement: $1
-            sourceLabels:
-              - __meta_kubernetes_pod_node_name
-            targetLabel: kubernetes_node
 
     prometheus-node-exporter:
       fullnameOverride: node-exporter
