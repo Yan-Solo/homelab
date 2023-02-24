@@ -45,10 +45,8 @@ spec:
         memory: 94Mi
       limits:
         memory: 103Mi
-    admin:
-      existingSecret: grafana-secret
-      userKey: gf_security_admin_user
-      passwordKey: gf_security_admin_password
+    adminUser: admin
+    adminPassword: admin
     sidecar:
       dashboards:
         enabled: true
