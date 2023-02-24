@@ -1,6 +1,6 @@
 ---
 creation_rules:
   - encrypted_regex: '^(data|stringData)$'
-    path_regex: 'flux/.*.sops\.ya?ml$'
+    path_regex: 'flux/.*\.sops\.ya?ml$'
     pgp: >-
       80EB49AB0591C44BA6BF33A75670B28AB65608FF
