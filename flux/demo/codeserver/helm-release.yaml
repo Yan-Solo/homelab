@@ -17,8 +17,8 @@ spec:
         namespace: flux-system
   values:
     image:
-      repository: https://registry.hub.docker.io/linuxserver/code-server
-      tag: latest
+      repository: registry.hub.docker.io/linuxserver/code-server
+      tag: 4.10.0
     service:
       main:
         ports:
