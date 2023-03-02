@@ -18,7 +18,7 @@ spec:
   values:
     image:
       repository: https://registry.hub.docker.io/linuxserver/code-server
-      tag: 4.10.0
+      tag: latest
     service:
       main:
         ports:
