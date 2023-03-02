@@ -1,0 +1,40 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: codeserver
+  namespace: demo
+spec:
+  interval: 15m
+  chart:
+    spec:
+      chart: app-template
+      version: '0.2.2'
+      interval: 15m
+      sourceRef:
+        kind: HelmRepository
+        name: bjw-s
+        namespace: flux-system
+  values:
+    image:
+      repository: hub.docker.io/linuxserver/code-server
+      tag: 4.10.0
+    service:
+      main:
+        ports:
+          http:
+            port: 8443
+    ingress:
+      main:
+        enabled: true
+        annotations:
+          kubernetes.io/ingress.class: traefik
+        hosts:
+          - host: codeserver.intropin.be
+            paths:
+              - path: /
+                pathType: Prefix
+                service:
+                  name: codeserver
+                  namespace: demo
+                  port: 8443
