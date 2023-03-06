@@ -47,7 +47,7 @@ spec:
       HOST: localhost
       PORT: 3000
       APP_ENV: production
-      WEB_APP_URL: automatisch.intropin.be
+      WEB_APP_URL: https://automatisch.intropin.be
       POSTGRES_DATABASE: autmatisch
       POSTGRES_HOST: postgres-postgresql.databases.svc.cluster.local
       POSTGRES_USER: postgres
