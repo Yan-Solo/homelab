@@ -53,7 +53,7 @@ spec:
       - name: WEB_APP_URL
         value: "https://automatisch.intropin.be"
       - name: POSTGRES_DATABASE
-        value: "autmatisch"
+        value: "automatisch"
       - name: POSTGRES_HOST
         value: "postgres-postgresql.databases.svc.cluster.local"
       - name: POSTGRES_USERNAME
