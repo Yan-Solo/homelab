@@ -16,6 +16,8 @@ spec:
         name: bitnami
         namespace: flux-system
   values:
+    architecture: standalone
+
     auth:
       existingSecret: redis-secret
       secretKeys:

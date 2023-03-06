@@ -16,8 +16,6 @@ spec:
         name: bitnami
         namespace: flux-system
   values:
-    architecture: standalone
-
     auth:
       enablePostgresUser: true
       existingSecret: postgresql-secret
