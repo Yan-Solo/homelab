@@ -24,7 +24,7 @@ spec:
         adminPasswordKey: "redis-password"
       usePasswordFiles: true
 
-    primary:
+    master:
       persistence:
         enabled: true
         existingClaim: redis
