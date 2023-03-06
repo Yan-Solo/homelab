@@ -57,3 +57,26 @@ spec:
       ENCRYPTION_KEY: "abc123 "
       WEBHOOK_SECRET_KEY: "abc123"
       APP_SECRET_KEY: "abc123"
+
+  additionalContainers:
+    worker:
+      name: automatisch-worker
+      image: ghcr.io/automatisch/automatisch:0.5.0
+      imagePullPolicy: IfNotPresent
+      env: 
+        HOST: localhost
+        PORT: 3000
+        APP_ENV: "production"
+        WEB_APP_URL: "https://automatisch.intropin.be"
+        POSTGRES_DATABASE: "autmatisch"
+        POSTGRES_HOST: "postgres-postgresql.databases.svc.cluster.local"
+        POSTGRES_USER: "postgres"
+        POSGRES_PASSWORD: "c3d0ZmExNjEyCg=="
+        REDIS_HOST: "redis-master.databases.svc.cluster.local"
+        REDIS_PASSWORD: "QmFlZGFpZ3UzcGhp "
+        ENCRYPTION_KEY: "abc123 "
+        WEBHOOK_SECRET_KEY: "abc123"
+        APP_SECRET_KEY: "abc123"
+      volumeMounts:
+        - name: storage
+          mountPath: /automatisch/storage
