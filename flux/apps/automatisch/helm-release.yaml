@@ -56,7 +56,7 @@ spec:
         value: "autmatisch"
       - name: POSTGRES_HOST
         value: "postgres-postgresql.databases.svc.cluster.local"
-      - name: POSTGRES_USER
+      - name: POSTGRES_USERNAME
         value: "postgres"
       - name: POSTGRES_PASSWORD
         value: "c3d0ZmExNjEyCg=="
