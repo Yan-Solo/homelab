@@ -54,4 +54,6 @@ spec:
       POSGRES_PASSWORD: c3d0ZmExNjEyCg==
       REDIS_HOST: redis-master.databases.svc.cluster.local
       REDIS_PASSWORD: QmFlZGFpZ3UzcGhp 
-
+      ENCRYPTION_KEY: 
+      WEBHOOK_SECRET_KEY: 
+      APP_SECRET_KEY:
