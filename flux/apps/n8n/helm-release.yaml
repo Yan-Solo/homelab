@@ -76,11 +76,5 @@ spec:
         value: "c3d0ZmExNjEyCg=="
       - name: N8N_EDITOR_BASE_URL
         value: "https://n8n.intropin.be"
-
-    probes:
-      startup:
-        enabled: false
-      liveness:
-        enabled: false
-      readiness:
-        enabled: false
+      - name: N8N_LOG_LEVEL
+        value: debug
