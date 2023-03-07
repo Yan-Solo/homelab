@@ -44,19 +44,35 @@ spec:
         existingClaim: n8n
         mountPath: /home/node/.n8n 
     env:
-      - N8N_BASIC_AUTH_ACTIVE: true
-      - N8N_BASIC_AUTH_USER: jan
-      - N8N_BASIC_AUTH_PASSWORD: swtfa1612
-      - N8N_HOST: n8n.intropin.be
-      - N8N_PORT: 5678
-      - N8N_PROTOCOL: https
-      - NODE_ENV=: roduction
-      - WEBHOOK_URL: https://n8n.intropin.be/
-      - GENERIC_TIMEZONE: Europe/Brussels
-      - DB_TYPE: postgresdb
-      - DB_POSTGRESDB_DATABASE: n8n
-      - DB_POSTGRESDB_HOST: postgres-postgresql.databases.svc.cluster.local
-      - DB_POSTGRESDB_PORT: 5432
-      - DB_POSTGRESDB_USER: postgres
-      - DB_POSTGRESDB_PASSword: c3d0ZmExNjEyCg==
-      - N8N_EDITOR_BASE_URL: https://n8n.intropin.be
+      - name: N8N_BASIC_AUTH_ACTIVE
+        value: true
+      - name: N8N_BASIC_AUTH_USER
+        value: "jan"
+      - name: N8N_BASIC_AUTH_PASSWORD
+        value: "swtfa1612"
+      - name: N8N_HOST
+        value: "n8n.intropin.be"
+      - name: N8N_PORT
+        value: "5678"
+      - name: N8N_PROTOCOL
+        value: "https"
+      - name: NODE_ENV=
+        value: "roduction"
+      - name: WEBHOOK_URL
+        value: "https://n8n.intropin.be/"
+      - name: GENERIC_TIMEZONE
+        value: "Europe/Brussels"
+      - name: DB_TYPE
+        value: "postgresdb"
+      - name: DB_POSTGRESDB_DATABASE
+        value: "n8n"
+      - name: DB_POSTGRESDB_HOST
+        value: "postgres-postgresql.databases.svc.cluster.local"
+      - name: DB_POSTGRESDB_PORT
+        value: "5432"
+      - name: DB_POSTGRESDB_USER
+        value: "postgres"
+      - name: DB_POSTGRESDB_PASSword
+        value: "c3d0ZmExNjEyCg=="
+      - name: N8N_EDITOR_BASE_URL
+        value: "https://n8n.intropin.be"
