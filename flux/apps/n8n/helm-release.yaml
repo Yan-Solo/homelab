@@ -78,3 +78,7 @@ spec:
         value: "https://n8n.intropin.be"
       - name: N8N_LOG_LEVEL
         value: debug
+      - name: DB_LOGGING_ENABLED
+        value: true
+      - name: DB_LOGGING_OPTIONS
+        value: log
