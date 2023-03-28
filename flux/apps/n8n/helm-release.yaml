@@ -29,6 +29,8 @@ spec:
             rejectUnauthorized: false
       generic:
         timezone: "Europe/Brussels"
+      host: "n8n.intropin.be"
+      port: "80"
     ingress:
       enabled: true
       annotations:
