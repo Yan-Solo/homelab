@@ -8,73 +8,22 @@ spec:
   interval: 60m
   chart:
     spec:
-      chart: app-template
-      version: '0.2.2'
+      chart: n8n
+      version: '0.10.0'
       interval: 15m
       sourceRef:
         kind: HelmRepository
-        name: bjw-s
+        name: open-8gears
         namespace: flux-system
   values:
-    image:
-      repository: n8nio/n8n
-      tag: latest
-    service:
-      main:
-        ports:
-          http:
-            port: 5678
-    ingress:
-      main:
-        enabled: true
-        annotations:
-          kubernetes.io/ingress.class: traefik
-        hosts:
-          - host: n8n.intropin.be
-            paths:
-              - path: /
-                pathType: Prefix
-                service:
-                  name: n8n
-                  namespace: apps
-                  port: 5678
-    persistence:
-      storage:
-        enabled: true
-        existingClaim: n8n
-        mountPath: /home/node/.n8n 
-    env:
-      - name: N8N_BASIC_AUTH_ACTIVE
-        value: false
-      - name: N8N_HOST
-        value: "n8n.intropin.be"
-      - name: N8N_PORT
-        value: "5678"
-      - name: N8N_PROTOCOL
-        value: "http"
-      - name: NODE_ENV
-        value: "production"
-      - name: WEBHOOK_URL
-        value: "https://n8n.intropin.be/"
-      - name: GENERIC_TIMEZONE
-        value: "Europe/Brussels"
-      - name: DB_TYPE
-        value: "postgresdb"
-      - name: DB_POSTGRESDB_DATABASE
-        value: "n8n"
-      - name: DB_POSTGRESDB_HOST
-        value: "postgres-postgresql.databases.svc.cluster.local"
-      - name: DB_POSTGRESDB_PORT
-        value: "5432"
-      - name: DB_POSTGRESDB_USER
-        value: "postgres"
-      - name: DB_POSTGRESDB_PASSword
-        value: "c3d0ZmExNjEyCg=="
-      - name: N8N_EDITOR_BASE_URL
-        value: "https://n8n.intropin.be"
-      - name: N8N_LOG_LEVEL
-        value: debug
-      - name: DB_LOGGING_ENABLED
-        value: true
-      - name: DB_LOGGING_OPTIONS
-        value: log
+    config:
+      database:
+        postgresdb:
+          database: "n8n"
+          host: postgres-postgresql.svc.databases.cluster.local 
+          user: "postgres"
+          password: "c3d0ZmExNjEyCg=="
+          ssl:
+            rejectUnauthorized: false
+      generic:
+        timezone: "Europe/Brussels"

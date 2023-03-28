@@ -12,3 +12,4 @@ resources:
   - truecharts.yaml
   - grafana-charts.yaml
   - prometheus-community.yaml
+  - open-8gears.yaml
