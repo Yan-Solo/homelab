@@ -29,3 +29,17 @@ spec:
             rejectUnauthorized: false
       generic:
         timezone: "Europe/Brussels"
+    ingress:
+      enabled: true
+      annotations:
+        kubernetes.io/ingress.class: traefik
+      hosts:
+        - host: automatisch.intropin.be
+          paths:
+            - path: /
+              pathType: Prefix
+              service:
+                name: automatisch
+                namespace: apps
+                port: 3000
+
