@@ -42,8 +42,9 @@ spec:
           paths:
             - path: /
               pathType: ImplementationSpecific
-              service:
-                name: n8n
-                namespace: apps
-                port: 80
+              backend:
+                service:
+                  name: n8n
+                  namespace: apps
+                  port: 80
 
