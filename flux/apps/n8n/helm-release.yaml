@@ -40,7 +40,7 @@ spec:
       hosts:
         - host: n8n.intropin.be
           paths:
-            - path: "/"
+            - path: "/"
               pathType: ImplementationSpecific
               backend:
                 service:
