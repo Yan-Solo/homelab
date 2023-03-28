@@ -41,5 +41,5 @@ spec:
               service:
                 name: n8n
                 namespace: apps
-                port: 5678
+                port: 80
 
