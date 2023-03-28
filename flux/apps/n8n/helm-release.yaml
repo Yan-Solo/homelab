@@ -41,7 +41,7 @@ spec:
         - host: n8n.intropin.be
           paths:
             - path: /
-              pathType: Prefix
+              pathType: ImplementationSpecific
               service:
                 name: n8n
                 namespace: apps
