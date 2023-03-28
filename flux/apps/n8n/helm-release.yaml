@@ -29,23 +29,17 @@ spec:
             rejectUnauthorized: false
       generic:
         timezone: "Europe/Brussels"
-
     ingress:
       enabled: true
       annotations:
         kubernetes.io/ingress.class: traefik
-        traefik.ingress.kubernetes.io/router.entrypoints: web, websecure
-        traefik.ingress.kubernetes.io/router.tls: 'true'
-        traefik.ingress.kubernetes.io/router.tls.certresolver: cloudflare
       hosts:
         - host: n8n.intropin.be
           paths:
-            - backend:
-                service:
-                  name: n8n
-                  namespace: apps
-                  port:
-                    name: 80
-              path: "/"
-              pathType: ImplementationSpecific
+            - path: "/*"
+              pathType: Prefix
+              service:
+                name: n8n
+                namespace: apps
+                port: 80
 
