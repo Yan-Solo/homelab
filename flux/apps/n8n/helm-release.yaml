@@ -34,12 +34,12 @@ spec:
       annotations:
         kubernetes.io/ingress.class: traefik
       hosts:
-        - host: automatisch.intropin.be
+        - host: n8n.intropin.be
           paths:
             - path: /
               pathType: Prefix
               service:
-                name: automatisch
+                name: n8n
                 namespace: apps
-                port: 3000
+                port: 5678
 
