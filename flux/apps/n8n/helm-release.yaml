@@ -40,10 +40,12 @@ spec:
       hosts:
         - host: n8n.intropin.be
           paths:
-            - path: /
-              pathType: Prefix
-              backend:
+            - backend:
                 service:
                   name: n8n
+                  namespace: apps
                   port:
-                    number: 80
+                    name: 80
+              path: "/"
+              pathType: ImplementationSpecific
+
