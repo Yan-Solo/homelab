@@ -30,13 +30,14 @@ spec:
       generic:
         timezone: "Europe/Brussels"
     ingress:
-      enabled: true
-      annotations:
-        kubernetes.io/ingress.class: traefik
-      hosts:
-        - host: n8n.intropin.be
-          paths:
-            - path: /
+      main:
+        enabled: true
+        annotations:
+          kubernetes.io/ingress.class: traefik
+        hosts:
+          - host: n8n.intropin.be
+            paths:
+              - path: /
     persistence:
       enabled: true
       existingClaim: n8n 
