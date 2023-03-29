@@ -29,3 +29,6 @@ spec:
             rejectUnauthorized: false
       generic:
         timezone: "Europe/Brussels"
+    persistence:
+      enabled: true
+      existingClaim: n8n 
