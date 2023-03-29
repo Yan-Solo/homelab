@@ -35,7 +35,8 @@ spec:
         kubernetes.io/ingress.class: traefik
       hosts:
         - host: n8n.intropin.be
-          paths: / 
+          paths:
+            - path: /
     persistence:
       enabled: true
       existingClaim: n8n 
