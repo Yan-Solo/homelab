@@ -4,3 +4,4 @@ kind: Kustomization
 resources:
   - volumes.yaml
   - helm-release.yaml
+  - ingress.yaml
