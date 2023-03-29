@@ -36,10 +36,10 @@ spec:
       hosts:
         - host: n8n.intropin.be
           paths:
-            - path: /*
+            - path: /
               pathType: Prefix
-              backend:
-                service:
-                  name: n8n
-                  namespace: apps
-                  port: 80
+              service:
+                name: n8n
+                namespace: apps
+                port: 80
+
