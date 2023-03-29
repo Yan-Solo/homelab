@@ -16,6 +16,8 @@ spec:
         name: open-8gears
         namespace: flux-system
   values:
+    n8n:
+      encryption_key: "phuJ9su4"
     config:
       database:
         type: postgresdb
