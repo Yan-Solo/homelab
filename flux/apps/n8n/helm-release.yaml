@@ -29,11 +29,3 @@ spec:
             rejectUnauthorized: false
       generic:
         timezone: "Europe/Brussels"
-    ingress:
-      enabled: true
-      annotations:
-        kubernetes.io/ingress.class: traefik
-      hosts:
-        - host: n8n.intropin.be
-          paths:
-            - path: /
