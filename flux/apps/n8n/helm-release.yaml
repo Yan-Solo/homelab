@@ -29,6 +29,12 @@ spec:
             rejectUnauthorized: false
       generic:
         timezone: "Europe/Brussels"
+    ingres:
+      enabled: true
+      hosts:
+        - host: n8n.intropin.be
     persistence:
       enabled: true
       existingClaim: n8n 
+    extraEnv: 
+      WEBHOOK_TUNNEL_URL: "https://n8n.intropin.be/"
