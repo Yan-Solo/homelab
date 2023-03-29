@@ -38,6 +38,7 @@ spec:
           - host: n8n.intropin.be
             paths:
               - path: /
+                pathType: Prefix
     persistence:
       enabled: true
       existingClaim: n8n 
