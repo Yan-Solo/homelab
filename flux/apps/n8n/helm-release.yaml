@@ -20,6 +20,7 @@ spec:
       encryption_key: "phuJ9su4"
     config:
       database:
+        type: postgresdb
         postgresdb:
           database: "n8n"
           host: postgres-postgresql.svc.databases.cluster.local 
