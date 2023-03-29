@@ -26,3 +26,5 @@ spec:
           host: postgres-postgresql.databases.svc.cluster.local 
           user: "postgres"
           password: "c3d0ZmExNjEyCg=="
+    extraEnv:
+      WEBHOOK_TUNNEL_URL: "https://n8n.intropin.be"
