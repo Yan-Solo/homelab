@@ -32,6 +32,6 @@ spec:
     persistence:
       enabled: true
       existingClaim: n8n 
-      mountPath: /config
+      mountPath: /root/.n8n/
     extraEnv: 
       WEBHOOK_TUNNEL_URL: "https://n8n.intropin.be/"
