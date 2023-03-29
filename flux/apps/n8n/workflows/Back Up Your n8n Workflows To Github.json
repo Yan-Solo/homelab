@@ -1,5 +1,5 @@
 {
-  "active": false,
+  "active": true,
   "connections": {
     "n8n": {
       "main": [
@@ -211,8 +211,8 @@
       "alwaysOutputData": true,
       "credentials": {
         "githubApi": {
-          "id": "11",
-          "name": "GitHub"
+          "id": "2",
+          "name": "GitHub account"
         }
       },
       "continueOnFail": true
@@ -299,8 +299,8 @@
       "typeVersion": 1,
       "credentials": {
         "githubApi": {
-          "id": "11",
-          "name": "GitHub"
+          "id": "2",
+          "name": "GitHub account"
         }
       }
     },
@@ -323,8 +323,8 @@
       "typeVersion": 1,
       "credentials": {
         "githubApi": {
-          "id": "11",
-          "name": "GitHub"
+          "id": "2",
+          "name": "GitHub account"
         }
       }
     },
@@ -450,8 +450,8 @@
       "typeVersion": 1,
       "credentials": {
         "n8nApi": {
-          "id": "162",
-          "name": "Docker"
+          "id": "1",
+          "name": "n8n account"
         }
       }
     },
@@ -484,7 +484,7 @@
   "settings": {},
   "staticData": null,
   "tags": [],
-  "triggerCount": 0,
-  "updatedAt": "2023-03-29T15:01:43.743Z",
-  "versionId": "78699881-41b4-4f4e-99f8-bcd86516b73d"
+  "triggerCount": 1,
+  "updatedAt": "2023-03-29T15:06:24.932Z",
+  "versionId": "6cc88ab9-71a8-4f92-a7c7-78a12a1e67c9"
 }
