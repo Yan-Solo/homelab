@@ -16,8 +16,6 @@ spec:
         name: open-8gears
         namespace: flux-system
   values:
-    n8n:
-      encryption_key: "phuJ9su4"
     config:
       database:
         type: postgresdb
@@ -26,13 +24,3 @@ spec:
           host: postgres-postgresql.databases.svc.cluster.local 
           user: "postgres"
           password: "c3d0ZmExNjEyCg=="
-          ssl:
-            rejectUnauthorized: false
-      generic:
-        timezone: "Europe/Brussels"
-    persistence:
-      enabled: true
-      existingClaim: n8n 
-      mountPath: /root/.n8n/
-    extraEnv: 
-      WEBHOOK_TUNNEL_URL: "https://n8n.intropin.be/"
