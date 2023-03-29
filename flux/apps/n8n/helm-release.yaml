@@ -23,7 +23,7 @@ spec:
         type: postgresdb
         postgresdb:
           database: "n8n"
-          host: postgres-postgresql.svc.databases.cluster.local 
+          host: postgres-postgresql.databases.svc.cluster.local 
           user: "postgres"
           password: "c3d0ZmExNjEyCg=="
           ssl:
