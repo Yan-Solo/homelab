@@ -1,0 +1,77 @@
+{
+  "active": false,
+  "connections": {
+    "Github Trigger": {
+      "main": [
+        [
+          {
+            "node": "Discord",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2023-03-29T15:24:14.943Z",
+  "id": "3",
+  "name": "Notify a team channel about new software releases via Slack and GitHub",
+  "nodes": [
+    {
+      "parameters": {
+        "owner": {
+          "__rl": true,
+          "value": "https://github.com/home-assistant",
+          "mode": "url",
+          "__regex": "https:\\/\\/github.com\\/([-_0-9a-zA-Z]+)"
+        },
+        "repository": {
+          "__rl": true,
+          "value": "core",
+          "mode": "list",
+          "cachedResultName": "core",
+          "cachedResultUrl": "https://github.com/home-assistant/core"
+        },
+        "events": [
+          "release"
+        ]
+      },
+      "name": "Github Trigger",
+      "type": "n8n-nodes-base.githubTrigger",
+      "position": [
+        380,
+        240
+      ],
+      "typeVersion": 1,
+      "id": "ec8faad0-839c-4ae2-8b89-f2cd04597233",
+      "credentials": {
+        "githubApi": {
+          "id": "2",
+          "name": "GitHub account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "webhookUri": "https://discord.com/api/webhooks/1090657526657323038/kNBzgmpTrmKFZkwdZaAhlFPS6xMBiq97NazruaOQFp839Rzy2hlH9lCb2bu3atJal8vx",
+        "text": "New home assistant release",
+        "options": {}
+      },
+      "id": "e874460e-f85b-40a6-adc1-70be5f522290",
+      "name": "Discord",
+      "type": "n8n-nodes-base.discord",
+      "typeVersion": 1,
+      "position": [
+        540,
+        240
+      ]
+    }
+  ],
+  "pinData": {},
+  "settings": {},
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2023-03-29T15:26:19.079Z",
+  "versionId": "ccfc7487-7151-48af-889a-053ce43bb63f"
+}
