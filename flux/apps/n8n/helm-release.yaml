@@ -31,6 +31,8 @@ spec:
         timezone: "Europe/Brussels"
     ingres:
       enabled: true
+      annotations:
+        kubernetes.io/ingress.class: traefik
       hosts:
         - host: n8n.intropin.be
     persistence:
