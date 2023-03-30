@@ -13,14 +13,6 @@ spec:
   storageClassName: local-storage
   local:
     path: /var/mnt/disk/jellyfin-config
-  nodeAffinity:
-    required:
-      nodeSelectorTerms:
-      - matchExpressions:
-        - key: kubernetes.io/hostname
-          operator: In
-          values:
-          - master01
 
 ---
 apiVersion: v1
