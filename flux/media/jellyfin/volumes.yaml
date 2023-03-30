@@ -20,7 +20,7 @@ spec:
         - key: kubernetes.io/hostname
           operator: In
           values:
-          - master1
+          - master01
 
 ---
 apiVersion: v1
