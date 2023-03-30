@@ -5,8 +5,8 @@ resources:
   - namespace.yaml
   - nfs-media-volume.yaml
   - jellyfin
-  - bazarr
-  - radarr
-  - sabnzbd
-  - sonarr
-  - jellyseerr
+  # - bazarr
+  # - radarr
+  # - sabnzbd
+  # - sonarr
+  # - jellyseerr
