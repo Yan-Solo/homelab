@@ -8,5 +8,5 @@ resources:
   # - bazarr
   - radarr
   # - sabnzbd
-  # - sonarr
+  - sonarr
   # - jellyseerr
