@@ -6,7 +6,7 @@ resources:
   - nfs-media-volume.yaml
   - jellyfin
   # - bazarr
-  # - radarr
+  - radarr
   # - sabnzbd
   # - sonarr
   # - jellyseerr

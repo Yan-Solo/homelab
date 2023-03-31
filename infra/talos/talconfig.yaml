@@ -28,6 +28,17 @@ nodes:
             gateway: 192.168.0.1
     patches:
       - |-
+        machine:
+          kubelet:
+            extraMounts:
+              - destination: /var/mnt/disk
+                type: bind
+                source: /var/mnt/disk
+                options:
+                  - bind
+                  - rshared
+                  - rw
+      - |-
         - op: add
           path: /machine/disks
           value:
