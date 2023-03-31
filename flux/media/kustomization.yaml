@@ -7,6 +7,6 @@ resources:
   - jellyfin
   # - bazarr
   - radarr
-  # - sabnzbd
+  - sabnzbd
   - sonarr
   # - jellyseerr
