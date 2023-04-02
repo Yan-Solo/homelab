@@ -1,0 +1,32 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: appsmith
+  namespace: apps
+spec:
+  interval: 15m
+  chart:
+    spec:
+      chart: appsmith
+      version: '2.0.0'
+      interval: 15m
+      sourceRef:
+        kind: HelmRepository
+        name: appsmith
+        namespace: flux-system
+  values:
+    ingress:
+      main:
+        enabled: true
+        annotations:
+          kubernetes.io/ingress.class: traefik
+        hosts:
+          - host: appsmith.intropin.be
+            paths:
+              - path: /
+                pathType: Prefix
+                service:
+                  name: appsmith
+                  namespace: apps
+                  port: 80
