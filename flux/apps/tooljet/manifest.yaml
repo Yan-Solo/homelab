@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: tooljet-deployment
+  namespace: apps
 spec:
   replicas: 2
   strategy:
