@@ -84,7 +84,7 @@ spec:
               valueFrom:
                 secretKeyRef:
                   name: server
-                  key: toojet_http_proxy
+                  key: tooljet_http_proxy
             - name: SERVER_HOST
               valuefrom:
                 secretKeyRef:
