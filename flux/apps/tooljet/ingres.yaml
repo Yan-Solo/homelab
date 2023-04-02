@@ -1,18 +1,26 @@
+---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
+  annotations:
+    kubernetes.io/ingress.class: traefik
+  labels:
+    app.kubernetes.io/instance: tooljet
+    app.kubernetes.io/name: tooljet
   name: tooljet
   namespace: apps
 spec:
   rules:
-  - host: tooljet.intropin.be
+  - host: toolject.intropin.be
     http:
       paths:
-      - path: /
-        pathType: Prefix
-        backend:
+      - backend:
           service:
             name: tooljet
             port:
               number: 3000
+        path: /
+        pathType: Prefix
+status:
+  loadBalancer: {}
 

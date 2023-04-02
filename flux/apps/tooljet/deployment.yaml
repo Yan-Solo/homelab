@@ -4,7 +4,7 @@ metadata:
   name: tooljet-deployment
   namespace: apps
 spec:
-  replicas: 2
+  replicas: 1
   strategy:
     type: RollingUpdate
     rollingUpdate:
