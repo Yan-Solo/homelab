@@ -19,7 +19,7 @@ spec:
             name: tooljet
             port:
               number: 3000
-        path: /*
+        path: /
         pathType: Prefix
 status:
   loadBalancer: {}
