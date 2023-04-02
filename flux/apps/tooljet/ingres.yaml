@@ -11,7 +11,7 @@ metadata:
   namespace: apps
 spec:
   rules:
-  - host: toolject.intropin.be
+  - host: tooljet.intropin.be
     http:
       paths:
       - backend:
