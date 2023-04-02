@@ -9,6 +9,6 @@ spec:
     component: tooljet
   ports:
     - protocol: TCP
-      port: 443
+      port: 3000
       targetPort: 3000
       name: https

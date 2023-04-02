@@ -14,5 +14,5 @@ spec:
           service:
             name: tooljet
             port:
-              number: 443
+              number: 3000
 
