@@ -5,3 +5,4 @@ resources:
   - secret.yaml
   - manifest.yaml
   - service.yaml
+  - ingres.yaml
