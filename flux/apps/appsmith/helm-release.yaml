@@ -31,5 +31,4 @@ spec:
                   namespace: apps
                   port: 80
     persistence:
-      enabled: true
-      storageClass: "local-storage"
+      enabled: false
