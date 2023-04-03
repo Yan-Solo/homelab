@@ -33,6 +33,6 @@ spec:
     persistence:
       enabled: false
     redis:
-      enabled: false
+      enabled: true
     mongodb:
       enabled: false
