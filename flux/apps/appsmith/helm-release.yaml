@@ -32,3 +32,7 @@ spec:
                   port: 80
     persistence:
       enabled: false
+    redis:
+      enabled: false
+    mongodb:
+      enabled: false
