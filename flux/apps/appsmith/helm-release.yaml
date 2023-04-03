@@ -33,6 +33,9 @@ spec:
     persistence:
       enabled: false
     redis:
-      enabled: true
-    mongodb:
       enabled: false
+    mongodb:
+      enabled: true
+      persistence:
+        enabled: 
+          false
