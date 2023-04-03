@@ -30,3 +30,6 @@ spec:
                   name: appsmith
                   namespace: apps
                   port: 80
+    persistence:
+      enabled: true
+      storageClass: "local-storage"
