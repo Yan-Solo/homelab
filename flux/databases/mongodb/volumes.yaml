@@ -3,6 +3,9 @@ apiVersion: v1
 kind: PersistentVolume
 metadata:
   name: mongodb
+  annotations:
+    app.kubernetes.io/managed-by: "Helm"
+    meta.helm.sh/release-name: "mongodb"
 spec:
   capacity:
     storage: 5G
