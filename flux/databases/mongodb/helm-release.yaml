@@ -17,10 +17,11 @@ spec:
         namespace: flux-system
   values:
     auth:
-      enablePostgresUser: true
+      enabled: true
       existingSecret: mongodb-secret
       secretKeys:
-        adminPasswordKey: "mongodb-password"
+        rootUser: "mongodb-user"
+        rootPassword: "mongodb-password"
       usePasswordFiles: true
 
     primary:
