@@ -32,6 +32,10 @@ metadata:
     app.kubernetes.io/managed-by: "Helm"
     meta.helm.sh/release-name: "mongodb"
     meta.helm.sh/release-namespace: "databases"
+  annotations:
+    app.kubernetes.io/managed-by: "Helm"
+    meta.helm.sh/release-name: "mongodb"
+    meta.helm.sh/release-namespace: "databases"
 spec:
   accessModes:
     - ReadWriteOnce
