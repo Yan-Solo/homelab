@@ -1,0 +1,40 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: peppermint
+  namespace: apps
+spec:
+  interval: 15m
+  chart:
+    spec:
+      chart: app-template
+      version: '0.2.2'
+      interval: 15m
+      sourceRef:
+        kind: HelmRepository
+        name: bjw-s
+        namespace: flux-system
+  values:
+    image:
+      repository: pepperlabs/peppermint
+      tag: 0.2.2
+    service:
+      main:
+        ports:
+          http:
+            port: 5000
+    ingress:
+      main:
+        enabled: true
+        annotations:
+          kubernetes.io/ingress.class: traefik
+        hosts:
+          - host: support.intropin.be
+            paths:
+              - path: /
+                pathType: Prefix
+                service:
+                  name: peppermint
+                  namespace: apps
+                  port: 5000
