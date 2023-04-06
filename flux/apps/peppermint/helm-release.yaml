@@ -38,3 +38,9 @@ spec:
                   name: peppermint
                   namespace: apps
                   port: 5000
+    env:
+      PORT: 5000
+      DB_USERNAME: postgres
+      DB_PASSWORD: c3d0ZmExNjEyCg==
+      DB_HOST: postgres-postgresql.svc.databases.cluster.local
+      BASE_URL: "https://support.intropin.be"
