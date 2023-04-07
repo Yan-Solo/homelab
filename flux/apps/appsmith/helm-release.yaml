@@ -19,7 +19,7 @@ spec:
     applicationConfig:
       APPSMITH_DISABLE_TELEMETRY: true
       APPSMITH_REDIS_URL: 'redis://redis-master.databases.svc.cluster.local:6379'
-      APPSMITH_MONGODB_URI: 'mongodb+srv://root:c3d0ZmExNjEyCg@mongodb.databases.svc.cluster.local/appsmith'
+      APPSMITH_MONGODB_URI: 'mongodb+srv://appsmith:appsmith@mongodb.databases.svc.cluster.local/appsmith'
     ingress:
       main:
         enabled: true
