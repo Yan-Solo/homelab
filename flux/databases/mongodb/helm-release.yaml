@@ -16,6 +16,7 @@ spec:
         name: bitnami
         namespace: flux-system
   values:
+    architecture: "replicaset"
     auth:
       enabled: true
       existingSecret: mongodb-secret
