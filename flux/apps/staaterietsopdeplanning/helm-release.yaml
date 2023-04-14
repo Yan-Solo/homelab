@@ -1,0 +1,44 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: staaterietsopdeplanning
+  namespace: apps
+spec:
+  interval: 15m
+  chart:
+    spec:
+      chart: app-template
+      version: '0.2.2'
+      interval: 15m
+      sourceRef:
+        kind: HelmRepository
+        name: bjw-s
+        namespace: flux-system
+  values:
+    image:
+      repository: linuxserver/nginx
+      tag: 1.22.1
+    service:
+      main:
+        ports:
+          http:
+            port: 80
+    ingress:
+      main:
+        enabled: true
+        annotations:
+          kubernetes.io/ingress.class: traefik
+        hosts:
+          - host: staaterietsopdeplanning.be
+            paths:
+              - path: /
+                pathType: Prefix
+                service:
+                  name: staaterietsopdeplanning
+                  namespace: apps
+                  port: 80
+    persistence:
+      config:
+        enabled: true
+        existingClaim: staaterietsopdeplanning
