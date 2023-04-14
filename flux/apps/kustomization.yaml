@@ -8,7 +8,7 @@ resources:
   - vikunja
   # # - satisfactory
   - n8n
-  - tooljet
-  - appsmith
-  - peppermint
+  # - tooljet
+  # - appsmith
+  # - peppermint
   - staaterietsopdeplanning
