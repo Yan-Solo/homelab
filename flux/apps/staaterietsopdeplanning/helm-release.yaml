@@ -23,7 +23,7 @@ spec:
       main:
         ports:
           http:
-            port: 443
+            port: 80
     ingress:
       main:
         enabled: true
@@ -37,7 +37,7 @@ spec:
                 service:
                   name: staaterietsopdeplanning
                   namespace: apps
-                  port: 443
+                  port: 80
     persistence:
       config:
         enabled: true
