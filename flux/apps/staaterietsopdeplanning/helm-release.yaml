@@ -30,7 +30,7 @@ spec:
         annotations:
           kubernetes.io/ingress.class: traefik
         hosts:
-          - host: https://staaterietsopdeplanning.be
+          - host: staaterietsopdeplanning.be
             paths:
               - path: /
                 pathType: Prefix
