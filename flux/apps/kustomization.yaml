@@ -4,7 +4,7 @@ kind: Kustomization
 resources:
   - namespace.yaml
   - home-assistant
-  # - standardnotes
+  - standardnotes
   - vikunja
   # # - satisfactory
   - n8n
