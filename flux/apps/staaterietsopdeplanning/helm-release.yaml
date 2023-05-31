@@ -18,7 +18,7 @@ spec:
   values:
     image:
       repository: linuxserver/nginx
-      tag: 1.22.1
+      tag: 1.24.0
     service:
       main:
         ports:
