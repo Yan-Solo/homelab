@@ -17,7 +17,7 @@ spec:
   values:
     image:
       repository: ghcr.io/onedr0p/sabnzbd
-      tag: 4.0.1
+      tag: 4.2.3
     podSecurityContext:
       runAsUser: 568
       runAsGroup: 568
